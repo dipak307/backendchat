@@ -7,11 +7,19 @@ const cookiesParser = require('cookie-parser')
 const { app, server } = require('./socket/index')
 
 // const app = express()
-app.use(cors({
-    origin : process.env.FRONTEND_URL,
-    credentials : true,
-    methods:['GET','DELETE','PUT','UPDATE']
-}))
+// app.use(cors({
+//     origin : process.env.FRONTEND_URL,
+//     credentials : true,
+//     methods:['GET','DELETE','PUT','UPDATE']
+// }))
+const corsOptions = {
+  origin: ['http://localhost:3001', 'https://chatfullstack.vercel.app'],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Enable CORS for requests with credentials
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
 app.use(express.json())
 app.use(cookiesParser())
 
