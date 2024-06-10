@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: my-node-app
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    rootDir: .  # Ensure this points to the root directory where package.json is located
