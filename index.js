@@ -13,7 +13,7 @@ const { app, server } = require('./socket/index')
 //     methods:['GET','DELETE','PUT','UPDATE']
 // }))
 const corsOptions = {
-  origin: ['http://localhost:3001', 'https://chatfullstack.vercel.app'],
+  origin: 'https://chatfullstack.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Enable CORS for requests with credentials
   optionsSuccessStatus: 204
